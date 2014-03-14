@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    ViewBag.verzonden = false;
+    ViewBag.email = "";
+    ViewBag.naam = "";
+    ViewBag.body = "";
+}
+
+<h2>Contact</h2>
+
+@if (ViewBag.verzonden == false)
+{
+    using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+
+        <label for="email">Email</label>
+        <input name="email" type="text" value="@ViewBag.email" />
+        <br />
+
+        <label for="naam">Naam</label>
+        <input name="naam" type="text" value="@ViewBag.naam" />
+        <br />
+        <label for="body">Body</label>
+        <input name="body" type="text" value="@ViewBag.body" />
+        <br />
+        <input type="submit" value="Submit" />
+    }
+}
+else
+{
+    <div>
+        Verzonden.
+    </div>
+}

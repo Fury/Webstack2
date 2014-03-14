@@ -1,0 +1,52 @@
+﻿@model Webstack_WC2_1.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Producten";
+}
+
+<h2>Producten</h2>
+
+@using (Html.BeginForm("Producten", "Home", FormMethod.Get))
+{@Html.ValidationSummary(true)
+    <div>
+        @Html.DropDownListFor(x => x.SelectedCategory, Model.CategorieSelectList)
+        
+    </div>
+     <input type="submit" value="Zoeken" />
+}
+
+<table>
+    <tr>
+        <th>
+            Naam
+        </th>
+        <th>
+            Beschrijving
+        </th>
+        <th>
+            Soort
+        </th>
+        <th>
+            Prijs
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrijsDecimal)
+            </td>
+        </tr>
+    }
+
+</table>

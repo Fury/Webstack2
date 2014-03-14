@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Oefening 1</title>
+    <meta name="description" content="The description of my page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+
+                        <li class="nav-item">@Html.ActionLink("Index", "Index", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Producten", "Producten", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Openingsuren", "Openingsuren", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+                <div id="main">
+                    @RenderBody()
+                </div>
+                <div id="footer">
+                    &copy; @DateTime.Now.Year
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+</html>

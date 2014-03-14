@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Openingsuren";
+}
+
+<h2>Openingsuren</h2>
+<ul>
+    @{
+
+        switch (DateTime.Now.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                <li>8:00</li>
+                <li>17:00</li>
+                break;
+            case DayOfWeek.Tuesday:
+            <li>8:00</li>
+            <li>17:00</li>
+                break;
+            case DayOfWeek.Wednesday:
+            <li>8:00</li>
+            <li>17:00</li>
+                break;
+            case DayOfWeek.Thursday:
+            <li>8:00</li>
+            <li>17:00</li>
+                break;
+            case DayOfWeek.Friday:
+            <li>8:00</li>
+            <li>17:30</li>
+                break;
+            default:
+            <li>Gesloten</li>
+                break;
+        }
+    }
+</ul>
